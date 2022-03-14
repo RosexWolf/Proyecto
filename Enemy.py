@@ -1,34 +1,19 @@
+from tracemalloc import start
 import turtle
+import random
 
-window=turtle.Screen()
-window.bgcolor('grey')
+class enemys(object):
+    x=random.randint(-200,200)
+    y=random.randint(-200,200)
+    enemy1=turtle.Turtle()
 
+    def __init__(self,enemy1):
+        self.enemy1=enemy1
+        start()      
 
-
-class enemy(object):
-    element=turtle.Turtle()
-    position=[]
-    def __init__(self,element,position):
-        self.element=element
-        self.position=position
-    def begin(self):
-        self.element.penup()
-        self.element.shape('turtle')
-        self.element.color('red')
-        self.element.goto(self.position[0],self.position[1])
-        turtle.speed(1)
-    def Move(self): 
-        turtle.position()
-        turtle.forward(25)
-        turtle.position()
-        turtle.backward(-75)
-        turtle.position()
-        
-
-enemy=enemy(turtle.Turtle(),[0,0])
-
-enemy.begin()
-enemy.Move()
-
-
-window.mainloop()
+    def start(self,x,y):
+        self.enemy1.penup()
+        self.enemy1.shape('square')
+        self.enemy1.color('red')
+        self.enemy1.goto(x,y)
+    
